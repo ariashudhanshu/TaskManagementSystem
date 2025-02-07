@@ -17,9 +17,9 @@ builder.Services.AddAuthentication("Bearer")
             ValidateAudience = true,
             ValidateLifetime = true,
             ValidateIssuerSigningKey = true,
-            ValidIssuer = "yourIssuer",
-            ValidAudience = "yourAudience",
-            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("yourSecretKey"))
+            ValidIssuer = "Shudhanshu",
+            ValidAudience = "Shudhanshu",
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("12345"))
         };
     });
 
