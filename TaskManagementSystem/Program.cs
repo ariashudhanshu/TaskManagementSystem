@@ -8,21 +8,6 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<EmployeeDbContext>(options =>
     options.UseMySQL(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-builder.Services.AddAuthentication("Bearer")
-    .AddJwtBearer("Bearer", options =>
-    {
-        options.TokenValidationParameters = new TokenValidationParameters
-        {
-            ValidateIssuer = true,
-            ValidateAudience = true,
-            ValidateLifetime = true,
-            ValidateIssuerSigningKey = true,
-            ValidIssuer = "Shudhanshu",
-            ValidAudience = "Shudhanshu",
-            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("12345"))
-        };
-    });
-
 builder.Services.AddControllers();
 
 var app = builder.Build();
