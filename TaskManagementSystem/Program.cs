@@ -23,7 +23,7 @@ builder.Services.AddAuthentication("Bearer")
         };
     });
 
-builder.Services.AddControllersWithViews();
+builder.Services.AddControllers();
 
 var app = builder.Build();
 
